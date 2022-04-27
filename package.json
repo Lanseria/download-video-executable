@@ -1,0 +1,35 @@
+{
+  "name": "download-video-executable",
+  "version": "0.0.1",
+  "packageManager": "pnpm@7.0.0",
+  "description": "download video executable",
+  "keywords": [
+    "download",
+    "video",
+    "executable"
+  ],
+  "license": "MIT",
+  "author": "lanseria <bmc@ivhik.cn>",
+  "main": "dist/index.js",
+  "module": "dist/index.mjs",
+  "types": "types/index.d.ts",
+  "scripts": {
+    "build": "rimraf dist types && tsc",
+    "test": "vitest",
+    "test:run": "vitest run",
+    "publish:pkg": "pnpm test:run && pnpm build && pnpm publish --access public"
+  },
+  "dependencies": {
+    "got": "^12.0.4"
+  },
+  "devDependencies": {
+    "@antfu/eslint-config": "^0.23.0",
+    "@typescript-eslint/eslint-plugin": "^5.22.0",
+    "@typescript-eslint/parser": "^5.22.0",
+    "eslint": "^8.14.0",
+    "rimraf": "^3.0.2",
+    "typescript": "^4.6.4",
+    "vite": "^2.9.8",
+    "vitest": "^0.10.2"
+  }
+}

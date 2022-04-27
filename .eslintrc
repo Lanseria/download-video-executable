@@ -1,0 +1,13 @@
+{
+  "env": {
+    "node": true
+  },
+  "globals": {
+    "__DEV__": true
+  },
+  "extends": "@antfu",
+  "rules": {
+    "import/named": "off",
+    "import/namespace": "off"
+  }
+}
