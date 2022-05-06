@@ -18,7 +18,6 @@ const download = async () => {
         got.stream(stream_url),
         fs.createWriteStream('index.mp4'),
       )
-      console.log('下载成功')
     }
   }
   return res
