@@ -1,7 +1,7 @@
 {
   "name": "download-video-executable",
   "version": "0.0.1",
-  "packageManager": "pnpm@7.0.0",
+  "packageManager": "pnpm@7.1.7",
   "description": "download video executable",
   "keywords": [
     "download",
@@ -20,16 +20,17 @@
     "publish:pkg": "pnpm test:run && pnpm build && pnpm publish --access public"
   },
   "dependencies": {
-    "got": "^12.0.4"
+    "fast-glob": "^3.2.11",
+    "got": "^12.1.0"
   },
   "devDependencies": {
-    "@antfu/eslint-config": "^0.23.0",
-    "@typescript-eslint/eslint-plugin": "^5.22.0",
-    "@typescript-eslint/parser": "^5.22.0",
-    "eslint": "^8.14.0",
+    "@antfu/eslint-config": "^0.25.0",
+    "@typescript-eslint/eslint-plugin": "^5.27.0",
+    "@typescript-eslint/parser": "^5.27.0",
+    "eslint": "^8.16.0",
     "rimraf": "^3.0.2",
-    "typescript": "^4.6.4",
-    "vite": "^2.9.8",
-    "vitest": "^0.10.2"
+    "typescript": "^4.7.2",
+    "vite": "^2.9.9",
+    "vitest": "^0.13.1"
   }
 }

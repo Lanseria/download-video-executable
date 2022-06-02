@@ -1,7 +1,8 @@
 import { describe, expect, it } from 'vitest'
-import { WeiboIE } from '../../src/extractor/weibo'
+import WeiboIE from '../../src/extractor/weibo'
+import type { TestDataType } from './data'
 
-const _TEST = {
+export const _TEST: TestDataType = {
   url: 'https://weibo.com/6275294458/Fp6RGfbff?type=comment',
   info_dict: {
     id: 'Fp6RGfbff',

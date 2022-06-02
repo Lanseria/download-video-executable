@@ -2,7 +2,7 @@ import { promisify } from 'node:util'
 import stream from 'node:stream'
 import fs from 'node:fs'
 import got from 'got'
-import { Info, InfoExtractor } from './common'
+import { Info, InfoExtractor } from './common/common'
 
 export interface Visible {
   type: number
@@ -194,4 +194,4 @@ class WeiboIE extends InfoExtractor {
   }
 }
 
-export { WeiboIE }
+export default WeiboIE

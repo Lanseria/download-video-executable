@@ -1,26 +1,22 @@
-import { promisify } from 'node:util'
-import stream from 'node:stream'
-import fs from 'node:fs'
-import got from 'got'
+import fg from 'fast-glob'
+import type { InfoExtractor } from './extractor/common/common'
 
-const pipeline = promisify(stream.pipeline)
+const globs = 'src/extractor/*.ts'
 
-const download = async () => {
-  const res = await got('https://m.weibo.cn/statuses/show?id=LrCXe2Fm4', {
-    method: 'GET',
-  }).json<any>()
-  if (res.ok) {
-    const { data } = res
-    const { page_info } = data
-    if (page_info.type === 'video') {
-      const { stream_url } = page_info.media_info
-      await pipeline(
-        got.stream(stream_url),
-        fs.createWriteStream('index.mp4'),
-      )
-    }
+export default async function (url: string) {
+  const assets = await fg(
+    globs, {
+      onlyFiles: true,
+      unique: true,
+    },
+  )
+  for await (const iterator of assets) {
+    const Extractor = (await import(iterator)).default
+    const infoExtractor: InfoExtractor = new Extractor()
+    // eslint-disable-next-line no-console
+    console.log(infoExtractor._VALID_URL)
+    if (infoExtractor.suitable(url))
+      // eslint-disable-next-line no-console
+      console.log(true)
   }
-  return res
 }
-
-export { download }
