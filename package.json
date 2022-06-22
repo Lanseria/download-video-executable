@@ -3,13 +3,13 @@
   "version": "0.0.1",
   "packageManager": "pnpm@7.1.7",
   "description": "download video executable",
+  "author": "lanseria <bmc@ivhik.cn>",
+  "license": "MIT",
   "keywords": [
     "download",
     "video",
     "executable"
   ],
-  "license": "MIT",
-  "author": "lanseria <bmc@ivhik.cn>",
   "main": "dist/index.js",
   "module": "dist/index.mjs",
   "types": "types/index.d.ts",

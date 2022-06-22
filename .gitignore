@@ -2,3 +2,4 @@ node_modules
 dist
 types
 *.mp4
+.DS_Store
